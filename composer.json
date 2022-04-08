@@ -1,0 +1,24 @@
+{
+    "name": "pengguangsheng\/laravel-wechat",
+    "description": "laravel wechat",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pengguangsheng",
+            "email": "358811737@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PengGuangSheng\\LaravelWechat\\": ""
+        }
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "PengGuangSheng\\LaravelWechat\\WeChatServiceProvider"
+            ]
+        }
+    }
+}
