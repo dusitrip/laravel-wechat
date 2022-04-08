@@ -1,28 +1,26 @@
-<h1 align="center"> laravel-wechat </h1>
-
-<p align="center"> laravel wechat.</p>
-
-
-## Installing
+## 描述
+这个是基于`Laravel`框架的微信公众号组件
+## 安装
 
 ```shell
-$ composer require pengguangsheng/laravel-wechat -vvv
+$ composer require pengguangsheng/laravel-wechat:master-dev
 ```
 
-## Usage
+## 配置文件发布
+```shell
+php artisan vendor:publish --provider="PengGuangSheng\LaravelWechat\Providers\WeChatServiceProvider"
+```
 
-TODO
-
-## Contributing
-
-You can contribute in one of three ways:
-
-1. File bug reports using the [issue tracker](https://github.com/pengguangsheng/laravel-wechat/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/pengguangsheng/laravel-wechat/issues).
-3. Contribute new features or update the wiki.
-
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
-
-## License
-
-MIT
+## 备注
+`Laravel` 应用
+在 `config/app.php` 注册 `ServiceProvider` 和 `Facade` （`Laravel` 5.5 以上无需手动注册）
+```
+'providers' => [
+    // ...
+    PengGuangSheng\LaravelWechat\WeChatServiceProvider::class
+]
+```
+然后再浏览器中访问的路由如下 http://localhost/swechat
+```
+Route::any('/', 'WeChatController@index')->middleware('swechat.check');
+```
